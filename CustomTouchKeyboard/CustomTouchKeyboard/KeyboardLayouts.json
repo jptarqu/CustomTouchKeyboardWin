@@ -1,0 +1,31 @@
+﻿{
+	"MainKeyboards" :
+	[
+	{
+		"Name" : "Abc",
+		"Keys" :
+			[
+			{"Keys":"","Label":"Cps","X":0,"Y":1,"Width":1,"Height":1, "IsCapsLock" :true},
+			{"Keys":"a","Label":"A","X":0,"Y":0,"Width":1,"Height":1},
+			{"Keys":"b","Label":"B","X":1,"Y":0,"Width":1,"Height":1},
+			{"Keys":"c","Label":"C","X":2,"Y":0,"Width":1,"Height":1},
+			{"Keys":"d","Label":"D","X":3,"Y":0,"Width":1,"Height":1},
+			{"Keys":"e","Label":"E","X":4,"Y":0,"Width":1,"Height":1}
+			]
+		
+	}
+	],
+	"SnippetsKeyboards" :
+	[
+	{
+		"Name" : "Selectors",
+		"Keys" :
+			[
+			{"Keys":"(^{LEFT})(+^{RIGHT})","Label":"SelWord","X":1,"Y":0,"Width":2,"Height":1},
+			{"Keys":"({HOME})(+{END})","Label":"SelLine","X":3,"Y":0,"Width":2,"Height":2}
+			]
+		
+	
+	}
+	],
+}

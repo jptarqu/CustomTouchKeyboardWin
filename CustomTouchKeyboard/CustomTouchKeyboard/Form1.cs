@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CustomTouchKeyboard.Configuration;
+using CustomTouchKeyboard.Keyboard;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,28 +17,38 @@ namespace CustomTouchKeyboard
     public partial class Form1 : Form
     {
         private IEnumerable<UserKey> _userKeys;
+        private const int UNIT_SIZE = 80;
+
         public Form1()
         {
-            
-            _userKeys = new[]
-            {
-                new UserKey("A","A"),
-                new UserKey("SelWord","(^{LEFT})(+^{RIGHT})"),
-                new UserKey("SelLine","({HOME})(+{END})")
 
-            };
+            //_userKeys = new[]
+            //{
+            //    new UserKey("A","A",0,0,1,1),
+            //    new UserKey("SelWord","(^{LEFT})(+^{RIGHT})",1,0,2,1),
+            //    new UserKey("SelLine","({HOME})(+{END})",3,0,2,2)
+
+            //};
+            //var json = JsonConvert.SerializeObject(_userKeys);
+            ConfigurationManager conf = new ConfigurationManager("KeyboardLayouts.json");
+            _keysSender = new KeysMessenger();
+
             InitializeComponent();
-            foreach(var userKey in _userKeys)
+            _userKeys = conf.Settings.MainKeyboards.First().Keys;
+            foreach (var userKey in _userKeys)
             {
                 var newBtn = new Button();
                 newBtn.Name = userKey.Label + "Btn";
-                newBtn.Size = new System.Drawing.Size(80, 80);
+                newBtn.Left = UNIT_SIZE * userKey.X;
+                newBtn.Top = UNIT_SIZE * userKey.Y;
+                newBtn.Size = new Size(UNIT_SIZE * userKey.Width, UNIT_SIZE * userKey.Height);
                 newBtn.Text = userKey.Label;
                 newBtn.UseVisualStyleBackColor = true;
                 newBtn.Tag = userKey;
-                newBtn.Click += new System.EventHandler(this.button1_Click);
-                keysPanel.Controls.Add(newBtn);
+                newBtn.Click += new EventHandler(button1_Click);
+                this.Controls.Add(newBtn);
             }
+            this.Width = Screen.PrimaryScreen.Bounds.Width;
         }
 
         protected override CreateParams CreateParams
@@ -85,13 +98,12 @@ namespace CustomTouchKeyboard
 
         public const int GW_HWNDFIRST = 0;
 
-
+        private KeysMessenger _keysSender;
 
         private void button1_Click(object sender, EventArgs e)
-
-        {
-            string combinationToSend = ((UserKey)((Button)sender).Tag).Keys; //select line
-            SendKeys.Send(combinationToSend);//"^c"); //Send ctrl+c
+        { 
+        
+            _keysSender.SendKey(((UserKey)((Button)sender).Tag));
 
             //this.TopMost = true;
             //    if (next != last) //If it is not the last window

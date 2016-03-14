@@ -1,16 +1,30 @@
 ﻿namespace CustomTouchKeyboard
 {
-    internal class UserKey
+    public class UserKey
     {
 
 
-        public UserKey(string label, string keys)
+        public UserKey()
         {
-            this.Label = label;
-            this.Keys = keys;
         }
 
-        public string Keys { get; internal set; }
-        public string Label { get; internal set; }
+        public UserKey(string label, string keys, int x, int y, int width, int height)
+        {
+            Keys = keys;
+            Label = label;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+        }
+
+        public string Keys { get; set; }
+        public string Label { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public bool IsShift { get; set; }
+        public bool IsCapsLock { get; set; }
     }
 }
