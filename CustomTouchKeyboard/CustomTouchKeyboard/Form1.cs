@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,9 @@ namespace CustomTouchKeyboard
 {
     public partial class Form1 : Form
     {
-        private IEnumerable<UserKey> _userKeys;
-        private const int UNIT_SIZE = 80;
 
         public Form1()
         {
-
             //_userKeys = new[]
             //{
             //    new UserKey("A","A",0,0,1,1),
@@ -31,25 +29,16 @@ namespace CustomTouchKeyboard
             //};
             //var json = JsonConvert.SerializeObject(_userKeys);
             ConfigurationManager conf = new ConfigurationManager("KeyboardLayouts.json");
-            _keysSender = new KeysMessenger();
 
             InitializeComponent();
-            _userKeys = conf.Settings.MainKeyboards.First().Keys;
-            foreach (var userKey in _userKeys)
-            {
-                var newBtn = new Button();
-                newBtn.Name = userKey.Label + "Btn";
-                newBtn.Left = UNIT_SIZE * userKey.X;
-                newBtn.Top = UNIT_SIZE * userKey.Y;
-                newBtn.Size = new Size(UNIT_SIZE * userKey.Width, UNIT_SIZE * userKey.Height);
-                newBtn.Text = userKey.Label;
-                newBtn.UseVisualStyleBackColor = true;
-                newBtn.Tag = userKey;
-                newBtn.Click += new EventHandler(button1_Click);
-                this.Controls.Add(newBtn);
-            }
+            //var m = conf.Settings.MainKeyboards;
+            this.MainPanel.LoadKeyboards(conf.Settings.MainKeyboards);
+            this.SnipsPanel.LoadKeyboards(conf.Settings.SnippetsKeyboards);
+
             this.Width = Screen.PrimaryScreen.Bounds.Width;
+
         }
+
 
         protected override CreateParams CreateParams
         {
@@ -62,93 +51,41 @@ namespace CustomTouchKeyboard
         }
         // For Windows Mobile, replace user32.dll with coredll.dll
 
-        [DllImport("user32.dll")]
+        //[DllImport("user32.dll")]
 
-        [return: MarshalAs(UnmanagedType.Bool)]
+        //[return: MarshalAs(UnmanagedType.Bool)]
 
-        static extern bool SetForegroundWindow(IntPtr hWnd);
-
-
-
-        [DllImport("user32.dll", SetLastError = true)]
-
-        static extern IntPtr GetWindow(IntPtr hWnd, uint uCmd);
+        //static extern bool SetForegroundWindow(IntPtr hWnd);
 
 
 
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        //[DllImport("user32.dll", SetLastError = true)]
 
-        static extern int GetWindowText(IntPtr hWnd, [Out] StringBuilder lpString, int nMaxCount);
-
-
-
-        [DllImport("user32.dll")]
-
-        [return: MarshalAs(UnmanagedType.Bool)]
-
-        static extern bool IsWindowVisible(IntPtr hWnd);
+        //static extern IntPtr GetWindow(IntPtr hWnd, uint uCmd);
 
 
 
+        //[DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
 
-
-        public const int GW_HWNDNEXT = 2;
-
-        public const int GW_HWNDLAST = 1;
-
-        public const int GW_HWNDFIRST = 0;
-
-        private KeysMessenger _keysSender;
-
-        private void button1_Click(object sender, EventArgs e)
-        { 
-        
-            _keysSender.SendKey(((UserKey)((Button)sender).Tag));
-
-            //this.TopMost = true;
-            //    if (next != last) //If it is not the last window
-
-            //    {
-
-            //        if (IsWindowVisible(next)) //If the window is visible
-
-            //        {
-
-            //            GetWindowText(next, sb, 256);
+        //static extern int GetWindowText(IntPtr hWnd, [Out] StringBuilder lpString, int nMaxCount);
 
 
 
-            //            //if (sb.ToString().Contains("Notepad")) //If it is a notpad.exe
+        //[DllImport("user32.dll")]
 
-            //            //{
+        //[return: MarshalAs(UnmanagedType.Bool)]
 
-
-
-            //            //}
+        //static extern bool IsWindowVisible(IntPtr hWnd);
 
 
 
-            //            Console.WriteLine(sb.ToString());
 
-            //        }
 
-            //    }
+        //public const int GW_HWNDNEXT = 2;
 
-            //    else
+        //public const int GW_HWNDLAST = 1;
 
-            //    {
+        //public const int GW_HWNDFIRST = 0;
 
-            //        break;
-
-            //    }
-
-            //}
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

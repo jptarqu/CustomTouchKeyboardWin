@@ -28,41 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.SnipsPanel = new CustomTouchKeyboard.Keyboard.KeysPanel();
+            this.MainPanel = new CustomTouchKeyboard.Keyboard.KeysPanel();
             this.SuspendLayout();
             // 
-            // panel1
+            // SnipsPanel
             // 
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1328, 100);
-            this.panel1.TabIndex = 0;
+            this.SnipsPanel.AutoSize = true;
+            this.SnipsPanel.Location = new System.Drawing.Point(13, 13);
+            this.SnipsPanel.Name = "SnipsPanel";
+            this.SnipsPanel.Size = new System.Drawing.Size(1350, 92);
+            this.SnipsPanel.TabIndex = 0;
             // 
-            // panel2
+            // MainPanel
             // 
-            this.panel2.Location = new System.Drawing.Point(13, 119);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1328, 284);
-            this.panel2.TabIndex = 1;
+            this.MainPanel.AutoSize = true;
+            this.MainPanel.Location = new System.Drawing.Point(11, 123);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1350, 280);
+            this.MainPanel.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 415);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1373, 415);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.SnipsPanel);
             this.Name = "Form1";
             this.Text = "Keyboard";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private Keyboard.KeysPanel SnipsPanel;
+        private Keyboard.KeysPanel MainPanel;
     }
 }
 
