@@ -1,0 +1,16 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".txt" #>
+
+<# //var firstChar = 33;var lastChar = 96; var lineNumber = 0; #>
+<# var firstChar = 65;var lastChar = 90; var lineNumber = 1; //abc 
+#>
+<# for(int currChar = firstChar; currChar <= lastChar; currChar++)
+   {
+#>
+{"Keys":"<#= ((char)(currChar)).ToString().ToLower() #>","Label":"<#= ((char)(currChar)) #>","X":<#= currChar - firstChar  #>,"Y":<#= lineNumber #> ,"Width": 1 ,"Height":1},
+
+<# } #>
