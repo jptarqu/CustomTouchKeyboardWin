@@ -6,7 +6,8 @@
 <#@ output extension=".txt" #>
 
 <# //var firstChar = 33;var lastChar = 96; var lineNumber = 0; #>
-<# var firstChar = 65;var lastChar = 90; var lineNumber = 1; //abc 
+<# //var firstChar = 65;var lastChar = 90; var lineNumber = 1; //abc 
+var firstChar = 48;var lastChar = 64; var lineNumber = 3; // numbers 
 #>
 <# for(int currChar = firstChar; currChar <= lastChar; currChar++)
    {

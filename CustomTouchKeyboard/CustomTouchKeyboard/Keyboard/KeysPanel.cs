@@ -12,7 +12,7 @@ namespace CustomTouchKeyboard.Keyboard
 {
     public partial class KeysPanel : UserControl
     {
-        private const int UNIT_SIZE = 32;
+        private const int UNIT_SIZE = 36;
         private readonly KeysMessenger _keysSender;
         private readonly LinkedList<Button> _currKeyBtns;
         private KeyboardLayout[] _possibleKeyboards;

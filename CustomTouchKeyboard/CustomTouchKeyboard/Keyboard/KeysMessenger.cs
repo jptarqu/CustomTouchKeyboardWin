@@ -16,7 +16,7 @@ namespace CustomTouchKeyboard.Keyboard
             {
                 _isCapLock = !_isCapLock;
             }
-            string combinationToSend = key.Keys;
+            string combinationToSend = key.Keys; //we assume the configuration file already is scaping +^%~()
             if (_isCapLock)
             {
                 combinationToSend = combinationToSend.ToUpper();
