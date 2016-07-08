@@ -12,7 +12,8 @@ namespace CustomTouchKeyboard.Keyboard
 {
     public partial class KeysPanel : UserControl
     {
-        private const int UNIT_SIZE = 36;
+        private const int PAD_SIZE = 2;
+        private const int UNIT_SIZE = 48;
         private readonly KeysMessenger _keysSender;
         private readonly LinkedList<Button> _currKeyBtns;
         private KeyboardLayout[] _possibleKeyboards;
@@ -37,12 +38,22 @@ namespace CustomTouchKeyboard.Keyboard
         public void RebuildKeysPanel(IEnumerable<UserKey> userKeys)
         {
             CleanPanel();
+            int currSlot = 0;
+            int currLine = 0;
+            int maxWidth = this.Width - UNIT_SIZE;
             foreach (var userKey in userKeys)
             {
+                if ((currSlot * UNIT_SIZE) > maxWidth)
+                {
+                    currLine++;
+                    currSlot = 0;
+                }
                 var newBtn = new Button();
                 newBtn.Name = userKey.Label + "Btn";
-                newBtn.Left = UNIT_SIZE * userKey.X;
-                newBtn.Top = UNIT_SIZE * userKey.Y;
+                newBtn.Left = UNIT_SIZE * currSlot;
+                //newBtn.Top = PAD_SIZE + UNIT_SIZE * userKey.Y;
+                //newBtn.Size = new Size(UNIT_SIZE * userKey.Width, UNIT_SIZE * userKey.Height);
+                newBtn.Top = PAD_SIZE + UNIT_SIZE * currLine;
                 newBtn.Size = new Size(UNIT_SIZE * userKey.Width, UNIT_SIZE * userKey.Height);
                 newBtn.Text = userKey.Label;
                 newBtn.UseVisualStyleBackColor = true;
@@ -50,13 +61,16 @@ namespace CustomTouchKeyboard.Keyboard
                 newBtn.Click += button1_Click;
                 this.Controls.Add(newBtn);
                 _currKeyBtns.AddLast(newBtn);
+                currSlot++;
             }
-            this.Width = Parent.Width - 4;
+            this.SwitchMainLeftBtn.Left = maxWidth + 8;
+            this.SwitchMainRightBtn.Left = maxWidth + 8;
         }
 
 
-        internal void LoadKeyboards(IEnumerable<KeyboardLayout> keyboards)
+        internal void LoadKeyboards(IEnumerable<KeyboardLayout> keyboards, int width)
         {
+            this.Width = width - PAD_SIZE;
             _possibleKeyboards = keyboards.ToArray();
             if (_possibleKeyboards != null && _possibleKeyboards.Length > 0)
             {

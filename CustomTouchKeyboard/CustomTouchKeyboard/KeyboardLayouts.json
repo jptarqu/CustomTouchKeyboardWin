@@ -274,7 +274,9 @@
 
 
 {"Keys":" ","Label":" space ","X":4,"Y":4 ,"Width": 5 ,"Height":1},
-{"Keys":"{ENTER}","Label":"enter","X":9,"Y":4 ,"Width": 4 ,"Height":1}
+{"Keys":"{BS}","Label":"BS","X":9,"Y":4 ,"Width": 1 ,"Height":1},
+{"Keys":"{DEL}","Label":"DEL","X":10,"Y":4 ,"Width": 1 ,"Height":1},
+{"Keys":"{ENTER}","Label":"enter","X":11,"Y":4 ,"Width": 4 ,"Height":1}
 
 
 

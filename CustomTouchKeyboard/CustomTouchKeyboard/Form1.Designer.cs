@@ -39,7 +39,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 100);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -51,8 +51,8 @@
             // 
             this.MainPanel.AutoSize = true;
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainPanel.Location = new System.Drawing.Point(10, 167);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MainPanel.Location = new System.Drawing.Point(10, 174);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(1);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(963, 180);
             this.MainPanel.TabIndex = 1;
@@ -61,8 +61,8 @@
             // 
             this.SnipsPanel.AutoSize = true;
             this.SnipsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SnipsPanel.Location = new System.Drawing.Point(71, 100);
-            this.SnipsPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SnipsPanel.Location = new System.Drawing.Point(71, 106);
+            this.SnipsPanel.Margin = new System.Windows.Forms.Padding(1);
             this.SnipsPanel.Name = "SnipsPanel";
             this.SnipsPanel.Size = new System.Drawing.Size(902, 61);
             this.SnipsPanel.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SnipsPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Keyboard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

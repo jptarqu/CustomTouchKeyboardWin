@@ -32,9 +32,12 @@ namespace CustomTouchKeyboard
             ConfigurationManager conf = new ConfigurationManager("KeyboardLayouts.json");
 
             InitializeComponent();
+            Screen myScreen = Screen.FromControl(this);
+            Rectangle area = myScreen.WorkingArea;
+            this.Width = area.Width - 4;
             //var m = conf.Settings.MainKeyboards;
-            this.MainPanel.LoadKeyboards(conf.Settings.MainKeyboards);
-            this.SnipsPanel.LoadKeyboards(conf.Settings.SnippetsKeyboards);
+            this.MainPanel.LoadKeyboards(conf.Settings.MainKeyboards, this.Width);
+            this.SnipsPanel.LoadKeyboards(conf.Settings.SnippetsKeyboards, this.Width);
 
             this.Width = Screen.PrimaryScreen.Bounds.Width;
 
