@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTouchKeyboard", "CustomTouchKeyboard\CustomTouchKeyboard.csproj", "{5A6B21B0-16EE-47A5-93D6-3BFCF118AFC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDHAppBar", "..\..\..\..\Downloads\TDHAppBar_src\TDHAppBar_src\TDHAppBar\TDHAppBar.csproj", "{92918A0A-8319-450E-852B-EA9FA9875D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppToolbar", "TestAppToolbar\TestAppToolbar.csproj", "{83BC8F99-193F-4944-ADE0-A668C2975CFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5A6B21B0-16EE-47A5-93D6-3BFCF118AFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A6B21B0-16EE-47A5-93D6-3BFCF118AFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A6B21B0-16EE-47A5-93D6-3BFCF118AFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92918A0A-8319-450E-852B-EA9FA9875D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92918A0A-8319-450E-852B-EA9FA9875D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92918A0A-8319-450E-852B-EA9FA9875D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92918A0A-8319-450E-852B-EA9FA9875D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BC8F99-193F-4944-ADE0-A668C2975CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BC8F99-193F-4944-ADE0-A668C2975CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BC8F99-193F-4944-ADE0-A668C2975CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BC8F99-193F-4944-ADE0-A668C2975CFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

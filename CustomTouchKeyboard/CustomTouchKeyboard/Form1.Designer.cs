@@ -28,35 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SnipsPanel = new CustomTouchKeyboard.Keyboard.KeysPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new CustomTouchKeyboard.Keyboard.KeysPanel();
+            this.SnipsPanel = new CustomTouchKeyboard.Keyboard.KeysPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // SnipsPanel
+            // pictureBox1
             // 
-            this.SnipsPanel.AutoSize = true;
-            this.SnipsPanel.Location = new System.Drawing.Point(13, 13);
-            this.SnipsPanel.Name = "SnipsPanel";
-            this.SnipsPanel.Size = new System.Drawing.Size(1350, 92);
-            this.SnipsPanel.TabIndex = 0;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 100);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainPanel
             // 
             this.MainPanel.AutoSize = true;
-            this.MainPanel.Location = new System.Drawing.Point(11, 123);
+            this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainPanel.Location = new System.Drawing.Point(10, 167);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1350, 280);
+            this.MainPanel.Size = new System.Drawing.Size(963, 180);
             this.MainPanel.TabIndex = 1;
+            // 
+            // SnipsPanel
+            // 
+            this.SnipsPanel.AutoSize = true;
+            this.SnipsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SnipsPanel.Location = new System.Drawing.Point(71, 100);
+            this.SnipsPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SnipsPanel.Name = "SnipsPanel";
+            this.SnipsPanel.Size = new System.Drawing.Size(902, 61);
+            this.SnipsPanel.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 415);
+            this.ClientSize = new System.Drawing.Size(985, 365);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SnipsPanel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Keyboard";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,6 +88,7 @@
 
         private Keyboard.KeysPanel SnipsPanel;
         private Keyboard.KeysPanel MainPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

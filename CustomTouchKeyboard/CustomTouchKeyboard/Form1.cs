@@ -71,7 +71,7 @@ namespace CustomTouchKeyboard
                     // AutoHideConfig delegate
                     new AppBar.AutoHideChangedDelegate(this.Configure_AutoHide),
                     // Docking dimensions (max height OR max width, depending upon .Edge)
-                    height, width, //TODO fix this, not showing correctly
+                   height + 25, width , //TODO fix this, not showing correctly
                     false);    // set .AutoHide
             }
             else
@@ -122,7 +122,12 @@ namespace CustomTouchKeyboard
             }
         }
 
-#endregion
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
         // For Windows Mobile, replace user32.dll with coredll.dll
 
         //[DllImport("user32.dll")]
